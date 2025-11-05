@@ -18244,6 +18244,15 @@ label {
   }
 }
 
+.brand-highlight {
+  color: #c2410c;
+}
+
+.brand-highlight:focus,
+.brand-highlight:hover {
+  color: #a16207;
+}
+
 /*-----------------------------------------------
 |   User Styles
 -----------------------------------------------*/
