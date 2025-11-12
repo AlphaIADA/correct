@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Up | SHARTFX</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico" />
+    <link rel="manifest" href="assets/img/favicons/manifest.json" />
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link href="assets/css/theme.css" rel="stylesheet" />
+  </head>
+  <body class="auth-page" data-auth-page="signup">
+    <header class="site-header">
+      <nav class="navbar site-nav">
+        <div class="container d-flex justify-content-between align-items-center">
+          <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="index.html">
+            <span class="brand-mark">SHARTFX</span>
+          </a>
+          <a class="btn btn-ghost" href="login.html">Log in</a>
+        </div>
+      </nav>
+    </header>
+    <main class="auth-wrapper">
+      <section class="auth-card" aria-labelledby="signup-heading">
+        <h1 id="signup-heading">Sign up</h1>
+        <p>Share a few details to request platform access. Google Sign-In is the recommended path for quick onboarding.</p>
+        <p class="auth-google-label">Continue with Google</p>
+        <div data-google-btn aria-live="polite"></div>
+        <form class="auth-form" data-auth-form aria-describedby="signup-note password-note">
+          <div>
+            <label for="signup-name">Full name</label>
+            <input class="auth-input" type="text" id="signup-name" name="fullName" required aria-required="true" autocomplete="name" />
+          </div>
+          <div>
+            <label for="signup-email">Email</label>
+            <input class="auth-input" type="email" id="signup-email" name="email" required aria-required="true" autocomplete="email" />
+          </div>
+          <div>
+            <label for="signup-phone">Phone</label>
+            <input class="auth-input" type="tel" id="signup-phone" name="phone" required aria-required="true" autocomplete="tel" />
+          </div>
+          <div>
+            <label for="signup-country">Country</label>
+            <input class="auth-input" type="text" id="signup-country" name="country" required aria-required="true" autocomplete="country-name" />
+          </div>
+          <div>
+            <label for="signup-password">Password (optional)</label>
+            <input class="auth-input" type="password" id="signup-password" name="password" aria-describedby="password-note" autocomplete="new-password" />
+            <p id="password-note" class="auth-note">Password will be enabled later when secure server auth is added. For now, use Google to sign in. Optional entries are ignored and never stored.</p>
+          </div>
+          <div>
+            <label for="signup-referral">Referral code (optional)</label>
+            <input class="auth-input" type="text" id="signup-referral" name="referral" />
+          </div>
+          <p id="signup-note" class="auth-note">Submitting this request authorizes SHARTFX to contact you through the supplied email or phone.</p>
+          <button class="auth-submit" type="submit">Submit</button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+      </section>
+    </main>
+    <div class="auth-toast" data-auth-toast role="status" aria-live="polite"></div>
+    <div class="text-center pb-4">
+      <p class="terms-note">Read our full <a href="/terms-and-conditions.html" target="_blank" rel="noopener">Terms &amp; Conditions</a></p>
+    </div>
+    <script>
+      const APPS_SCRIPT_WEBAPP_URL = 'PASTE_YOUR_URL_HERE';
+      const GOOGLE_CLIENT_ID = 'PASTE_YOUR_GOOGLE_CLIENT_ID';
+    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="assets/js/auth.js" defer></script>
+  </body>
+</html>

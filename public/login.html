@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login | SHARTFX</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico" />
+    <link rel="manifest" href="assets/img/favicons/manifest.json" />
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link href="assets/css/theme.css" rel="stylesheet" />
+  </head>
+  <body class="auth-page" data-auth-page="login">
+    <header class="site-header">
+      <nav class="navbar site-nav">
+        <div class="container d-flex justify-content-between align-items-center">
+          <a class="navbar-brand d-flex align-items-center fw-bold fs-3" href="index.html">
+            <span class="brand-mark">SHARTFX</span>
+          </a>
+          <a class="btn btn-ghost" href="signup.html">Sign up</a>
+        </div>
+      </nav>
+    </header>
+    <main class="auth-wrapper">
+      <section class="auth-card" aria-labelledby="login-heading">
+        <h1 id="login-heading">Log in</h1>
+        <p>Use your registered email or phone number, or continue with Google for the fastest access.</p>
+        <p class="auth-google-label">Continue with Google</p>
+        <div data-google-btn aria-live="polite"></div>
+        <form class="auth-form" data-auth-form aria-describedby="login-note">
+          <div>
+            <label for="login-identifier">Email or phone</label>
+            <input class="auth-input" type="text" id="login-identifier" name="identifier" required aria-required="true" autocomplete="username" />
+          </div>
+          <p id="login-note" class="auth-note">Have questions? Reach us via WhatsApp or the support numbers on the main site.</p>
+          <button class="auth-submit" type="submit">Submit</button>
+        </form>
+        <p class="auth-switch">Don’t have an account? <a href="signup.html">Sign up</a></p>
+      </section>
+    </main>
+    <div class="auth-toast" data-auth-toast role="status" aria-live="polite"></div>
+    <div class="text-center pb-4">
+      <p class="terms-note">Read our full <a href="/terms-and-conditions.html" target="_blank" rel="noopener">Terms &amp; Conditions</a></p>
+    </div>
+    <script>
+      const APPS_SCRIPT_WEBAPP_URL = 'PASTE_YOUR_URL_HERE';
+      const GOOGLE_CLIENT_ID = 'PASTE_YOUR_GOOGLE_CLIENT_ID';
+    </script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="assets/js/auth.js" defer></script>
+  </body>
+</html>
