@@ -33,21 +33,31 @@ Update these variables to change the global palette, or adjust section-specific 
 1. **Google Sheet**  
    - Create a new Google Sheet.  
    - Add a tab named **Users** with headers (row 1) exactly as follows:  
-     `Timestamp | SourcePage | FullName | Email | Phone | Country | Referral | GoogleID | GoogleName | GoogleEmail | GoogleAvatar | UserAgent | IP | RawJSON`
+     `Timestamp | Name | Email | Phone | Country | Source`
 
 2. **Apps Script deployment**  
    - From the Sheet, open **Extensions → Apps Script**, remove any boilerplate, and paste the contents of `Code.gs`.  
-   - Click **Deploy → New deployment → Web app**, set *Who has access* to “Anyone”, and copy the generated Web App URL.
+   - Click **Deploy → New deployment → Web app**, choose **Execute as: Me**, set **Who has access** to “Anyone”, then deploy and copy the Web App URL. Whenever you update `Code.gs`, repeat “Deploy → Manage deployments → Edit → Deploy” so the endpoint picks up your changes.
 
 3. **Wire the Web App URL**  
    - In both `public/login.html` and `public/signup.html`, replace the placeholder string in `const APPS_SCRIPT_WEBAPP_URL = 'PASTE_YOUR_URL_HERE';` with the Web App URL from step 2.
 
 4. **Create a Google OAuth Web client ID**  
    - In Google Cloud Console, create a new “Web application” OAuth client (use the live domain + `http://localhost` during development).  
-   - Copy the Client ID and replace `const GOOGLE_CLIENT_ID = 'PASTE_YOUR_GOOGLE_CLIENT_ID';` in both auth pages.
+    - Copy the Client ID and replace `const GOOGLE_CLIENT_ID = 'PASTE_YOUR_GOOGLE_CLIENT_ID';` in both auth pages.
 
 5. **Test the flow**  
-   - Load `/signup.html` or `/login.html`, submit a manual form and a Google sign-in, and verify new rows appear in the Users sheet with timestamps plus the metadata captured by `assets/js/auth.js`.
+   - Load `/signup.html` or `/login.html`, submit a manual form and a Google sign-in, and verify new rows appear in the Users sheet with timestamps.  
+   - Open DevTools → Console: on success you should see logs in this order:  
+     1. `"[auth] Posting to Apps Script"`  
+     2. `fetch …/exec` network request returning **200**  
+     3. `"[auth] Apps Script accepted payload"`  
+     4. Toast message “Request received! Redirecting…”  
+   - For Google Sign-In you should also see “`[auth] Google Sign-In button initialized`” followed by the log above when the credential posts.
+
+6. **Local vs production testing**  
+   - Local: run `npx serve public` (or similar) and browse to `http://localhost:5500/login.html`. Make sure that origin is listed inside the OAuth client’s “Authorized JavaScript origins”.  
+   - Production: deploy the static files to `https://shartfx.com`. Confirm the Cloud Console entry contains both `https://shartfx.com` and `https://www.shartfx.com`.
 
 ## Running locally
 
