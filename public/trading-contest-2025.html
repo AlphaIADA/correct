@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trading Contest 2025 | IUX &amp; Iwind Capital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join the Trading Contest 2025 by IUX & Iwind Capital, compete responsibly, and showcase your trading volume for exciting cash prizes.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #010725;
+      --bg-deep: #020b2c;
+      --accent: #f9a825;
+      --accent-glow: rgba(249, 168, 37, 0.25);
+      --cyan: #26d4ff;
+      --text-light: #f5f7ff;
+      --text-muted: #9db0d3;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --border-soft: rgba(255, 255, 255, 0.1);
+      --max-width: 1100px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-light);
+      background: var(--bg-dark);
+      min-height: 100vh;
+      line-height: 1.6;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(38, 212, 255, 0.08), transparent 45%),
+        radial-gradient(circle at 80% 0%, rgba(249, 168, 37, 0.08), transparent 40%),
+        linear-gradient(120deg, rgba(38, 212, 255, 0.04) 0%, transparent 40%),
+        linear-gradient(var(--bg-dark), var(--bg-deep));
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 40px);
+      pointer-events: none;
+    }
+    .page {
+      position: relative;
+      z-index: 1;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    h1, h2, h3 {
+      margin: 0 0 0.65em;
+      line-height: 1.2;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      letter-spacing: 0.08em;
+    }
+    h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--cyan);
+    }
+    h3 {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    p {
+      margin: 0 0 1em;
+      color: var(--text-muted);
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(2, 11, 44, 0.9), rgba(1, 7, 37, 0.95));
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(249, 168, 37, 0.25), transparent 55%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #05060f;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.95rem 2.6rem;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 25px var(--accent-glow);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px rgba(249, 168, 37, 0.35);
+    }
+    section {
+      margin-top: 3rem;
+      padding: 2.5rem;
+      border-radius: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      backdrop-filter: blur(6px);
+    }
+    .prizes {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 2rem;
+    }
+    .prize-card {
+      padding: 1.8rem;
+      border-radius: 18px;
+      border: 1px solid rgba(249, 168, 37, 0.2);
+      background: linear-gradient(140deg, rgba(249, 168, 37, 0.07), rgba(2, 11, 44, 0.55));
+      position: relative;
+      overflow: hidden;
+    }
+    .prize-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+    .prize-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+    .prize-amount {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 0.4rem;
+      color: var(--accent);
+    }
+    ol {
+      margin: 1.5rem 0;
+      padding-left: 1.2rem;
+      color: var(--text-light);
+    }
+    ol li {
+      margin-bottom: 0.75rem;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .split {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin-top: 1.5rem;
+    }
+    .split-block {
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      background: rgba(2, 11, 44, 0.85);
+    }
+    .split-block h3 {
+      color: var(--cyan);
+      letter-spacing: 0.04em;
+    }
+    .mid-cta {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      padding: 2rem 1rem 0;
+    }
+    .risk-warning {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      max-width: 900px;
+      margin: 0 auto 1rem;
+    }
+    .copyright {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.08em;
+    }
+    @media (min-width: 992px) {
+      .hero {
+        padding: 4rem 2rem 5rem;
+      }
+      section {
+        padding: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+      <header class="hero">
+        <div class="hero-content">
+          <h1>TRADING CONTEST 2025</h1>
+          <h2>Show your trading skills and stand a chance to win exciting cash prizes.</h2>
+          <p>Join our live trading contest, put your strategy to the test, and compete with other traders for the highest trading volume during the contest period.</p>
+          <a class="btn" href="https://www.iux.com/en/register?code=eRisV5d4" target="_blank" rel="noopener">REGISTER NOW</a>
+        </div>
+      </header>
+
+      <section>
+        <h2>Prize for Winners</h2>
+        <div class="prizes">
+          <div class="prize-card">
+            <div class="prize-label">First Place</div>
+            <div class="prize-amount">$1,000</div>
+          </div>
+          <div class="prize-card">
+            <div class="prize-label">Second Place</div>
+            <div class="prize-amount">$600</div>
+          </div>
+          <div class="prize-card">
+            <div class="prize-label">Third Place</div>
+            <div class="prize-amount">$200</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>How to Join</h2>
+        <ol>
+          <li>Click the “Register Now” button on this page.</li>
+          <li>Create your trading account.</li>
+          <li>Complete your account verification (KYC).</li>
+          <li>Fund your account with a minimum of $20 and a maximum of $200.</li>
+          <li>Trade a total of at least 3 lots during the contest period to qualify.</li>
+        </ol>
+        <p class="note">All trading must be done on your live account during the contest period to be counted.</p>
+      </section>
+
+      <section>
+        <div class="split">
+          <div class="split-block">
+            <h3>How Winners Are Chosen</h3>
+            <p>Winners will be chosen based on the highest total trading volume (lots) achieved during the contest period among all qualified participants.</p>
+          </div>
+          <div class="split-block">
+            <h3>Contest Period</h3>
+            <p>November 10th – December 12th, 2025</p>
+          </div>
+        </div>
+        <p class="note" style="text-align:center; margin-top:2rem;">Registration is open. Join the challenge and test your strategy responsibly.</p>
+        <div class="mid-cta">
+          <a class="btn" href="https://www.iux.com/en/register?code=eRisV5d4" target="_blank" rel="noopener">REGISTER NOW</a>
+        </div>
+      </section>
+
+      <footer>
+        <p class="risk-warning">Risk Warning: Trading leveraged products such as Forex and CFDs involves a high level of risk and may not be suitable for all investors. You could lose all your invested capital. Please ensure you fully understand the risks involved and seek independent advice if necessary. No profits are guaranteed. Terms and conditions apply.</p>
+        <div class="copyright">© 2025 IUX &amp; Iwind Capital. All rights reserved.</div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
